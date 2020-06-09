@@ -13,12 +13,16 @@ import project
 janela = project.menu.tela.iniciar_pygame()
 continuar = True
 pagina_atual = project.menu
+
 while continuar:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+        for event in pygame.event.get(): #pega os eventos
+            if event.type == pygame.QUIT: #sair do jogo, esta aqui pois funciona em todas as telas
                 continuar = False
-            elif event.type in dir(pagina_atual.main.controles):
-                evento = event.type
-                resultado_do_return = getattr(pagina_atual.main.controles, evento)()
+
+            elif event.type == pygame.KEYDOWN:
+                if event.key in dir(pagina_atual.main.controles): #Procura a key na classe controles da pagina atual
+                    evento = event.type
+                    resultado_do_return = getattr(pagina_atual.main.controles, evento)() #chama o evento
+        
         pygame.display.flip()
 
