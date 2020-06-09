@@ -1,1 +1,1 @@
-from project.menu import tela, main
+from project.menu import tela, main, controles

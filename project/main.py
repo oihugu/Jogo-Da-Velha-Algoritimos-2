@@ -20,9 +20,10 @@ while continuar:
                 continuar = False
 
             elif event.type == pygame.KEYDOWN:
-                if event.key in dir(pagina_atual.main.controles): #Procura a key na classe controles da pagina atual
-                    evento = event.type
-                    resultado_do_return = getattr(pagina_atual.main.controles, evento)() #chama o evento
+                if event.key in pagina_atual.controles.definidos.keys(): #Procura a key na classe controles da pagina atual
+                    #IMPORTANTE
+                    #A tecla esta sendo chamada em ASCII
+                    pagina_atual.controles.definidos[event.key](janela)
         
         pygame.display.flip()
 
