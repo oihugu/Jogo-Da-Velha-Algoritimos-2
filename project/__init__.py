@@ -1,0 +1,1 @@
+from project import menu, jogo, ranking
