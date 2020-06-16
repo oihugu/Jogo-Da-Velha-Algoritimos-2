@@ -41,9 +41,30 @@ class User:
 
 def area_trabalhavel(janela):
     largura, altura = pygame.display.get_surface().get_size()
-    pygame.draw.rect(janela,    
-    (0,0,200),
-    [largura//20 * 7 ,altura//2, 5,altura])
-    pygame.draw.rect(janela,    
-    (0,0,200),
-    [largura//20 * 13 ,altura//2, 5,altura])
+    for a in range(1,20):
+        pygame.draw.rect(janela,    
+        (0,0,200),
+        [largura//20 *a,0, 5,largura])
+        font = pygame.font.Font('visual/kashima.ttf', 14)
+        text = font.render(f'{a}', True, (0, 0, 0))
+        text_width, text_height = font.size(f'{a}')
+        janela.blit(text,
+        (largura//20,largura + 10))
+
+def gerar_icone(janela):
+    #sakura = pygame.image.load(r'visual/icon.png')
+    pygame.display.set_icon(janela)
+
+def area_trabalhavel_y(janela):
+    largura, altura = pygame.display.get_surface().get_size()
+    for a in range(1,20):
+        pygame.draw.rect(janela,    
+        (0,0,200),
+        [0,altura//20 * a, altura,5])
+        font = pygame.font.Font('visual/kashima.ttf', 14)
+        text = font.render(f'{a}', True, (0, 0, 0))
+        text_width, text_height = font.size(f'{a}')
+        janela.blit(text,
+        (altura + 10,altura//20 * a))
+
+    

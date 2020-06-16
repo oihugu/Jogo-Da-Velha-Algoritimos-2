@@ -4,7 +4,7 @@ import ranking
 import jogo
 from pygame.locals import RESIZABLE
 
-def tela_menu(janela):
+def main(janela):
     compartilhados.tela_vazia(janela)
     BLACK = (0, 0, 0)
     ##menu

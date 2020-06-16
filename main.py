@@ -11,7 +11,9 @@ altura, largura = 1200,500
 pygame.init()
 pygame.display.set_caption("Jogo da Velha")
 janela = pygame.display.set_mode((altura, largura))
-menu.tela_menu(janela)
+menu.main(janela)
+
+compartilhados.gerar_icone(janela)
 
 User = compartilhados.User
 continuar = True
@@ -37,6 +39,12 @@ while continuar:
                 User.na_pagina_menu = False
                 User.na_pagina_jogo = True
                 jogo.main(janela)
+            if event.key == pygame.K_m:
+                pagina_atual = jogo
+                User.na_pagina_menu = True
+                User.na_pagina_jogo = False
+                User.na_pagina_ranking = False
+                menu.main(janela)
 
                     
         
