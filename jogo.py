@@ -9,7 +9,7 @@ pygame.display.set_caption("Jogo da Velha")
 xis = pygame.image.load('visual/sakura2.png')
 bola = pygame.image.load('visual/oni2.png')
 
-text = pygame.font.SysFont("Arial.ttf", 32)
+text = pygame.font.Font('visual/kashima.ttf', 32)
 
 aviso = pygame.Surface((0,0))
 pontosJogadorBola = pygame.Surface((0,0))
