@@ -7,15 +7,16 @@ from pygame.locals import RESIZABLE
 
 
 altura, largura = 1200,500
+User = compartilhados.User()
+
 
 pygame.init()
 pygame.display.set_caption("Jogo da Velha")
 janela = pygame.display.set_mode((altura, largura))
-menu.main(janela)
+menu.main(janela, User)
 
 compartilhados.gerar_icone(janela)
 
-User = compartilhados.User
 continuar = True
 
 
@@ -33,18 +34,18 @@ while continuar:
                 pagina_atual = ranking
                 User.na_pagina_menu = False
                 User.na_pagina_ranking = True
-                ranking.main(janela)
+                ranking.main(janela, User)
             if event.key == pygame.K_j:
                 pagina_atual = jogo
                 User.na_pagina_menu = False
                 User.na_pagina_jogo = True
-                jogo.main(janela)
+                jogo.main(janela, User)
             if event.key == pygame.K_m:
                 pagina_atual = jogo
                 User.na_pagina_menu = True
                 User.na_pagina_jogo = False
                 User.na_pagina_ranking = False
-                menu.main(janela)
+                menu.main(janela, User)
 
                     
         
